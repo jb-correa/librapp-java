@@ -119,7 +119,7 @@ public class IngestaControlador {
 			modelo.put("error", "No se pudieron guardar los datos!");
 			return "form-porcion";
 
-		}
+		}}
 
 
 		@GetMapping("/guardar")
@@ -182,7 +182,7 @@ public class IngestaControlador {
 		}
 
 
-	}
+	
 
 	@GetMapping("/guardar-porcion")
 	public String crear(ModelMap modelo) {
