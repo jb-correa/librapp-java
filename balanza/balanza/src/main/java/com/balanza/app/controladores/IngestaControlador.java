@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -60,24 +61,9 @@ public class IngestaControlador {
 	}
 	
 	
-	@GetMapping ("/historial")
-	public String listar(ModelMap modelo) {
-		
-		List<Ingesta> historial= ingestaServ.listarIngestasDiarias();
-		
-		modelo.put("historial", historial);
-		
-		return "";
-		
-	}
 	
-	@GetMapping("/eliminar")
-	public String eliminar(String id) {
-		
-		porcionServ.eliminarPorcion(id);
-				
-		return "redirect :/comidas-del-dia/guardar";
-	}
+	
+	
 
 	/**
 	 * @param request
@@ -144,13 +130,13 @@ public class IngestaControlador {
 		;
 
 		@PostMapping ("/guardar")
-		public  String guardado (HttpSession request) throws ErrorServicio {
+		public  String guardado (HttpSession request, ModelMap model) throws ErrorServicio {
 
 			try {
 				List<Porcion> ingestaDiaria = new ArrayList<>((List) request.getAttribute("ingestaDiaria"));
-				Double totalCaloriasDia = (Double) request.getAttribute("totalCaloriasDia");
+				int totalCaloriasDia = request.getAttribute("totalCaloriasDia");
 
-				ingestaServ.guardaIngestaDiaria(ingestaDiaria, totalCaloriasDia);
+				ingestaServ.guardaIngestaDiaria(ingestaDiaria);
 				model.put("exito", "Se cargaron con éxito las comidas del día");
 				return "form-sesion-ejercicio";
 			} catch (ErrorServicio e) {

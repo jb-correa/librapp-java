@@ -31,13 +31,10 @@ public class IngestaService {
 			calorias+=porcion.getTotalCaloriasPorcion();
 			
 		}
-		double totalCaloriasDia=calorias;
 		
 		ingesta.setIngestaDiaria(ingestaDiaria);
-		ingesta.setTotalCaloriasDia((double) calorias);
-
+		ingesta.setTotalCaloriasDia( calorias);
 		ingesta.setIngestaDiaria(ingestaDiaria);
-		ingesta.setTotalCaloriasDia(totalCaloriasDia);
 		ingesta.setFecha((java.sql.Date) new Date());
 
 		
