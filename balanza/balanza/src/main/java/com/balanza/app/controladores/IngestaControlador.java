@@ -61,10 +61,6 @@ public class IngestaControlador {
 	}
 	
 	
-	
-	
-	
-
 	/**
 	 * @param request
 	 * @param modelo
@@ -134,7 +130,6 @@ public class IngestaControlador {
 
 			try {
 				List<Porcion> ingestaDiaria = new ArrayList<>((List) request.getAttribute("ingestaDiaria"));
-				int totalCaloriasDia = request.getAttribute("totalCaloriasDia");
 
 				ingestaServ.guardaIngestaDiaria(ingestaDiaria);
 				model.put("exito", "Se cargaron con éxito las comidas del día");
@@ -155,13 +150,13 @@ public class IngestaControlador {
 			return "form-ingesta";
 		}
 
-
+		//Recuperar historial para este método
 		@GetMapping("/historial")
 		public String listar (ModelMap modelo){
 
-			List<Ingesta> historial = ingestaServ.historial();
+			//List<Ingesta> historial = ingestaServ.historial();
 
-			modelo.put("historial", historial);
+			//modelo.put("historial", historial);
 
 			return "";
 
