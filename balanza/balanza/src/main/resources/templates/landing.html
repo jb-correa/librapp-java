@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:insert="fragments :: head">
+    
+</head>
+<body>
+    
+    <div th:insert="fragments:: nav-sin-loguear"></div>
+
+    <header class="masthead text-center text-white">
+        <div class="masthead-content">
+          <div class="container">
+            <h1 class="masthead-heading mb-0">Bienvenido a Libra</h1>
+            <h2 class="masthead-subheading mb-0">Tu balanza de calorías</h2>
+          </div>
+        </div>
+        <div class="bg-circle-1 bg-circle"></div>
+        <div class="bg-circle-2 bg-circle"></div>
+        <div class="bg-circle-3 bg-circle"></div>
+        <div class="bg-circle-4 bg-circle"></div>
+      </header>
+
+      <section>
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-6 order-lg-2">
+              <div class="p-5">
+                <img class="img-fluid rounded-circle" src="img/IMG-comida.jpg" alt="">
+              </div>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+              <div class="p-5">
+                <h2 class="display-4">Ingresa los alimentos que comiste</h2>
+               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-6">
+              <div class="p-5">
+                <img class="img-fluid rounded-circle" src="img/IMG-ejercicio.jpeg" alt="" >
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="p-5">
+                <h2 class="display-4">Ingresa tu rutina de ejercicios</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>  
+
+      <section>
+        <div class="container">
+          <div class="row align-items-center">
+            
+            <div class="col-lg-6 order-lg-2">
+              <div class="p-5">
+                <h2 class="display-4">Y nosotros te decimos el balance calórico de tu día</h2>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+<<<<<<< Updated upstream
+      <button class="btn btn-primary" type="submit"> <a href="/login">Comenzar</a></button>
+=======
+      <div class="mb-3">
+      <a class="btn btn-succes" th:href="@{/login}">Comenzar</a>
+      </div>
+>>>>>>> Stashed changes
+    
+  <div th:insert="fragments::footer"></div>
+  
+</body>
+</html>

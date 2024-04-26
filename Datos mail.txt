@@ -1,0 +1,7 @@
+Datos Email sender Libra:
+
+nombre: librapp.noreply@gmail.com
+password: Mortadela1
+
+Codigo para app librapp: eljxccqlggzrtxmu
+codigo para gestionPedidos de django: ngwjugqpbfrozqjt

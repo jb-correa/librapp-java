@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:insert="fragments :: head">
+
+</head>
+
+<body>
+
+	<h1>Contanos que comiste hoy</h1>
+
+<<<<<<< Updated upstream
+	<form th:action="@{/porcion/comidas-del-dia}" method="POST">
+=======
+	<div class="container m-3">
+
+	<form th:action="@{/comidas-del-dia/guardar-porcion}" method="POST">
+>>>>>>> Stashed changes
+		<div class="form-floating">
+			<select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="idComida">
+				<option value="default" selected>Busca el tipo de comida</option>
+				<option  th:each ="comida :${comidas}" th:value="${comida.id}" th:text="${comida.nombre}"> </option>
+			</select>
+		</div>
+		<div class="form-floating">
+			<select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="cantidad">
+				<option selected>Busca la cantidad</option>
+				<option  th:each="cantidad : ${cantidades}" th:value="${cantidad}" th:text="${cantidad}"></option>
+			</select>
+		</div>
+
+
+		<button type="submit" class="btn btn-primary" ><a th:ref="@{/comidas-del-dia/guardar-porcion}" >Agregar comida</a></button>
+	</form>
+	
+	
+		<button><a th:href="@{/comidas-del-dia/guardar}" class="btn btn-primary">Continuar</a></button>
+	
+	</div>
+
+	<div th:insert="fragments :: footer">
+	</div>
+
+</body>
+
+</html>

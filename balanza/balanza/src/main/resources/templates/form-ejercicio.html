@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:insert="fragments :: head">
+    
+</head>
+<body>
+
+
+	<div th:insert="fragments:: nav-bar"></div>
+     
+    <div th:if="${exito}!=null" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Exito!</strong> Usuario registrado con éxito.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+  
+    <div th:if="${error}!=null" class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error!</strong> <p th:text="${error}">No se pudo registrar al usuario</p>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+        
+    
+    <form th:action="@{/ejercicio/crear}" method="POST">
+        <div class="mb-3">
+            <label  class="form-label">Nombre </label>
+            <input type="text" class="form-control" placeholder="Nombre del Ejercicio" name="nombreEjercicio" th:value="${nombreEjercicio}">
+          </div>
+         <div class="mb-3">
+            <label  class="form-label">Calorías quemadas por hora de ejercicio</label>
+            <input type="number" step="any" class="form-control" placeholder="Calorías quemadas por hora de ejercicio" name="caloriasQuemadasPorHora" th:value="${caloriasQuemadasPorHora}">
+          </div>
+              
+        <button type="submit" class="btn btn-primary">Crear</button>
+      </form>
+
+    
+    <div th:insert="fragments :: footer">
+    </div>
+
+</body>
+</html>

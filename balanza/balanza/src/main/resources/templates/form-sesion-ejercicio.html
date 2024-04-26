@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:insert="fragments :: head">
+
+</head>
+
+<body>
+
+	<h1>Contanos que comiste hoy</h1>
+
+	<form th:action="@{/sesion-de-ejercicios/crear}" method="POST">
+		<div class="form-floating">
+			<select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="idEjercicio">
+				<option selected>Busca el tipo de ejercicio</option>
+				<option th:each="ejercicio: ${ejercicios}" th:value="${ejercicio.id}" th:text="${ejercicio.nombreEjercicio}" ></option>
+			</select>
+		</div>
+		<div class="form-floating">
+			<select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="idComida">
+				<option selected>Ingresa el tiempo de ejercicio</option>
+				<option th:each="tiempo : ${tiempos}" th:value="${tiempo}" th:text="${tiempo}"></option>
+			</select>
+
+
+		<button type="submit" class="btn btn-primary">Agregar sesión de ejercicio</button>
+	</form>
+	
+	<button  class="btn btn-primary"> <a href="/balanza/crear)">Continuar</a></button>
+	
+	</div>
+
+	<div th:insert="fragments :: footer">
+	</div>
+
+</body>
+
+</html>

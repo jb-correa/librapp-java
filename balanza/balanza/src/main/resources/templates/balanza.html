@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head th:insert="fragments :: head">
+    
+</head>
+  <body>
+   <div th:insert="fragments:: nav-bar"></div>
+
+   <table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Total calorías ingeridas</th>
+            <th scope="col">Total calorías quemadas haciendo ejercicio</th>
+            <th scope="col">Total de calorías quemadas </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="">
+            <td> <span th:text="${}"> </span></td>
+            <td><span th:text="${}"> </span></td>
+            <td><span th:text="${}"> </span></td>
+            </tr>
+    </tbody>
+</table>
+
+    <h2>El resultado de tu balanza es:</h2>
+    <h1>#</h1>
+
+
+   <div th:insert="fragments::footer"></div>
+   
+</body>
+</html>

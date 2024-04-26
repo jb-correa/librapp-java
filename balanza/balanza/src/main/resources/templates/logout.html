@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:insert="fragments :: head">
+</head>
+
+<body>
+
+
+	<div class="mb-3">
+		<div th:if="${error}!=null" class="alert alert-danger alert-dismissible fade show" role="alert">
+			<strong>El usuario o la contraseña son incorrectos</strong>
+			<p th:text="${error}"></p>
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+		
+			<header class="masthead text-center text-white">
+				<div class="masthead-content">
+					<div class="container">
+						<h1>Gracias por visitarnos!
+							Esperamos verte pronto por aquí!
+						</h1>	
+					</div>
+	<div class="bg-circle-1 bg-circle"></div>
+	<div class="bg-circle-2 bg-circle"></div>
+	<div class="bg-circle-3 bg-circle"></div>
+	<div class="bg-circle-4 bg-circle"></div>
+	</header>
+
+	<div th:insert="fragments :: footer"></div>
+
+</body>
+
+</html>
