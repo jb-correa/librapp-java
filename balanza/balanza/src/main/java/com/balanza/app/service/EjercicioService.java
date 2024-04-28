@@ -33,10 +33,9 @@ public class EjercicioService {
 	
 		public void validar(String nombreEjercicio, Integer caloriasQuemadasPorHora) throws ErrorServicio{
 			
-			if(nombreEjercicio==null|| nombreEjercicio.equalsIgnoreCase("")
-					|| nombreEjercicio.isBlank()) {
+			if(nombreEjercicio==null|| nombreEjercicio.equalsIgnoreCase(""))
 				throw new ErrorServicio ("El nombre no puede estar vacío");
-			}
+			
 			
 			List<Ejercicio> ejercicios=ejercicioRepo.findAll();
 			
@@ -50,8 +49,9 @@ public class EjercicioService {
 				throw new ErrorServicio ("La cantidad de calorías quemadas "
 						+ "no puede ser cero");
 			}
+		}
 			
-			}
+			
 		
 		public List<Ejercicio> listar(){
 			
