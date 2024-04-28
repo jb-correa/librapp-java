@@ -47,8 +47,8 @@ public class PorcionService {
 		
 		porcion.setComida(comida);
 		porcion.setCantidad(cantidad);
-		porcion.setTotalCaloriasPorcion(comida.getCaloriasPorUnidad()*cantidad);
->
+		porcion.setTotalCaloriasPorcion(comida.getCalorías()*cantidad);
+
 		
 		porcionRepo.save(porcion);
 		

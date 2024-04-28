@@ -1,6 +1,5 @@
 package com.balanza.app.service;
 
-import java.util.List;
 
 import javax.transaction.Transactional;
 
@@ -44,7 +43,7 @@ public class QuemaDiariaService {
 	
 	public void validar(String idUsuario) throws ErrorServicio{
 		
-		if (idUsuario.equalsIgnoreCase("") || idUsuario.isBlank()) {
+		if (idUsuario.equalsIgnoreCase("")) {
 			throw new ErrorServicio ("El usuario no puede estar vacío");
 		}
 		
