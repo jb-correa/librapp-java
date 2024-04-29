@@ -27,9 +27,6 @@ public class UsuarioService implements UserDetailsService{
 	@Autowired
 	private UsuarioRepositorio usuarioRep;
 	
-
-	private List<Usuario> usuarios;
-
 	@Autowired
 	private EmailNotifications emailNotification;
 
