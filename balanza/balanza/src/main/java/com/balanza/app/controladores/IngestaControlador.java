@@ -68,6 +68,7 @@ public class IngestaControlador {
 	 * @return
 	 * @throws ErrorServicio
 	 */
+	@SuppressWarnings("unchecked")
 	@PostMapping("/guardar-porcion")
 	public String guardar(HttpSession request, ModelMap modelo, @RequestParam String idComida,
 						  @RequestParam String cantidad) throws ErrorServicio {
@@ -83,7 +84,7 @@ public class IngestaControlador {
 			Porcion porcion = porcionServ.crearPorcion(comida, numero);
 
 			if (request.getAttribute("ingestaDiaria") != null) {
-				List<Porcion> ingestaDiaria = new ArrayList<>((List) request.getAttribute("ingestaDiaria"));
+				List<Porcion> ingestaDiaria =  (List<Porcion>) request.getAttribute("ingestaDiaria");
 				ingestaDiaria.add(porcion);
 				request.setAttribute("ingestDiaria", ingestaDiaria);
 			} else {
@@ -103,10 +104,11 @@ public class IngestaControlador {
 		}}
 
 
+		@SuppressWarnings("unchecked")
 		@GetMapping("/guardar")
 		public String guardar (HttpSession request, ModelMap model){
 
-			List<Porcion> ingestaDiaria = new ArrayList<>((List) request.getAttribute("ingestaDiaria"));
+			List<Porcion> ingestaDiaria =  (List<Porcion>) request.getAttribute("ingestaDiaria");
 
 			Double totalCaloriasDia = 0.0;
 
