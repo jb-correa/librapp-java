@@ -10,7 +10,7 @@ spring:
       ddl-auto: update
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL5InnoDBDialect      
+        dialect: org.hibernate.community.dialect.SQLiteDialect    
  thymeleaf:
     cache: false 
 server:
